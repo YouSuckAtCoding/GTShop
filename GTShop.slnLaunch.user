@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "GTShop.Server\\GTShop.Server.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "gtshop.client\\gtshop.client.esproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

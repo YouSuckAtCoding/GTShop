@@ -1,0 +1,47 @@
+.footer {
+  width: 100%;
+  background-color: var(--mdc-elevated-card-container-color, var(--mat-sys-surface-container-low));
+
+  &-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &-IconContainer {
+    display: flex;
+    width: 100%;
+  }
+
+  &-IconListItem {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    background-color:transparent;
+  }
+
+  &-IconList {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .footer {
+    width: 100%;
+
+
+    &-container {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}

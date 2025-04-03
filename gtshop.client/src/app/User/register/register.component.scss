@@ -1,0 +1,34 @@
+.register {
+
+  &-Container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+
+  &-FormContainer {
+
+      mat-form-field{
+          width:100%;
+      }
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  &-Form {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+  }
+
+  &-Image {
+    width: 60%;
+    height: auto;
+  }
+
+}

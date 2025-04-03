@@ -1,0 +1,42 @@
+<div class="login">
+  <div class="login-Container">
+    <div class="login-FormContainer" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="login-Form">
+        <h1>Login</h1>
+        <p>Create an account <a href="/register">Here</a></p>
+
+        <mat-form-field>
+          <mat-label>Email:</mat-label>
+          <input matInput
+                 formControlName="email"
+                 required
+                 placeholder="Your email" />
+          <mat-error *ngFor="let error of getErrors(form.get('email')!,
+  'Email')">
+            {{error}}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password:</mat-label>
+          <input matInput
+                 formControlName="pass"
+                 required
+                 placeholder="Your password"
+                 type="password" />
+          <mat-error *ngFor="let error of getErrors(form.get('pass')!,
+  'Pass')">
+            {{error}}
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary"
+                type="submit" [disabled]="!form.valid">
+          Login
+        </button>
+      </div>
+      <div class="login-Image">
+        <img src="./assets/img/LoginImage2.png" />
+      </div>
+    </div>
+  </div>
+</div>

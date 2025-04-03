@@ -1,0 +1,140 @@
+@use '@angular/material' as mat;
+
+.navbar {
+
+
+  &-positioner {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  &-menu {
+    display: none;
+  }
+
+  &-container {
+    display: grid;
+    align-items: start;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+  }
+
+  button {
+    background-color: transparent;
+    color: white;
+  }
+
+  &-items1 {
+    display: flex;
+    align-items: center;
+  }
+
+  &-videoContainer {
+    display: flex;
+    overflow-x: auto;
+    width: auto;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &-accordionContainer {
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  &-loginAccordion {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  &-loginAccordionPanel {
+
+      button {
+          color: black;
+          background-color:lightgray;
+      }
+  }
+
+  &-loginAccordionContent {
+    margin-top: 10%;
+    background-color: white;
+  }
+
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+  border-bottom: solid 3px white;
+  border-radius: 2px;
+  color: white;
+  margin-top: 2%;
+  position: absolute;
+}
+
+#myVideo {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+
+@media only screen and (max-width: 800px) {
+
+
+  .navbar {
+
+    &-menu {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-items1, &-items2 {
+      display: none;
+    }
+
+    &-items3 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-items4 {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+
+
+      button {
+        width: 15px;
+      }
+    }
+
+    #menu {
+      display: block;
+    }
+
+    &-videoContainer {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: scroll;
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+.mainpage {
+
+  &-Container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  &-Card {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &-CardContainer {
+    width: 30%;
+  }
+
+  &-CardGridHolder {
+    display: grid;
+  }
+
+  &-ContentCardContainerSecondary {
+    display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content:center;
+    height: 100%;
+    width: 40%;
+    border: none;
+    color: white;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &-ImageCardContainerSecondary {
+    display: flex;
+    position: sticky;
+    margin-top: 2%;
+    width: auto;
+    height: 100%;
+    border-radius: 2%;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &-CardHeader {
+    display: flex;
+    width: 100%;
+    justify-content:center;
+  }
+
+  &-CardFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+
+
+  button {
+    background-color: transparent;
+    color: white;
+  }
+
+  &-CardFooter {
+    margin-top: 2%;
+  }
+
+  &-CardContent {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &-CardText {
+    width: 30%;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &-ImgContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  &-Title {
+    text-decoration: none;
+    font-size: xx-large;
+  }
+
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .mainpage {
+
+    &-Container {
+      flex-direction: column;
+    }
+
+    &-CardContainer {
+      width: 100%;
+    }
+
+    &-CardGridHolder {
+    }
+
+
+    &-ContentCardContainerSecondary {
+        position:relative;
+        width:100%;
+        align-items:end;
+        bottom: 2%;
+    }
+  }
+}

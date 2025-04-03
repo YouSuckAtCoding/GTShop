@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTShop.Server", "GTShop.Server\GTShop.Server.csproj", "{9440D615-D074-4642-90A0-442559AB54E9}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "gtshop.client", "gtshop.client\gtshop.client.esproj", "{24CB61EA-592A-4FCE-9F36-BD47658E553C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTShopTests", "GTShopTests\GTShopTests.csproj", "{2ABF0152-8A4D-4AAF-A060-D62ED3787273}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9440D615-D074-4642-90A0-442559AB54E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9440D615-D074-4642-90A0-442559AB54E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9440D615-D074-4642-90A0-442559AB54E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9440D615-D074-4642-90A0-442559AB54E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24CB61EA-592A-4FCE-9F36-BD47658E553C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24CB61EA-592A-4FCE-9F36-BD47658E553C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24CB61EA-592A-4FCE-9F36-BD47658E553C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{24CB61EA-592A-4FCE-9F36-BD47658E553C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24CB61EA-592A-4FCE-9F36-BD47658E553C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24CB61EA-592A-4FCE-9F36-BD47658E553C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2ABF0152-8A4D-4AAF-A060-D62ED3787273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ABF0152-8A4D-4AAF-A060-D62ED3787273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ABF0152-8A4D-4AAF-A060-D62ED3787273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ABF0152-8A4D-4AAF-A060-D62ED3787273}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,99 @@
+<div class="navbar-container">
+
+  <div class="navbar-videoContainer">
+    <video autoplay loop [muted]="'muted'" id="myVideo">
+      <source src="./assets/img/OpeningGtShop.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+
+  <div class="navbar-positioner">
+    <div class="navbar" id="navbar">
+      <div class="navbar-items1">
+        <img src="./assets/img/GTLogoWhite75.png" style="margin-bottom: 2%; z-index:1;" />
+        <button mat-raised-button>
+          Cars
+        </button>
+        <button mat-raised-button>
+          Retailers
+        </button>
+        <button mat-raised-button>
+          Build Your Own
+        </button>
+      </div>
+      <div class="navbar-items2">
+        <button mat-raised-button>
+          <fa-icon [icon]="faCart"></fa-icon>
+        </button>
+        <button mat-raised-button>
+          <fa-icon [icon]="faLocation"></fa-icon>
+        </button>
+
+        <button mat-raised-button>
+          <fa-icon [icon]="faUser" (click)="showAccordion()"></fa-icon>
+        </button>
+
+
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-items3">
+          <img src="./assets/img/GTLogoWhite75.png" style="margin-bottom: 2%; z-index:1;" />
+
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voice mail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </mat-menu>
+        </div>
+        <div class="navbar-items4">
+          <button mat-raised-button>
+            <fa-icon [icon]="faCart"></fa-icon>
+          </button>
+          <button mat-raised-button>
+            <fa-icon [icon]="faLocation"></fa-icon>
+          </button>
+          <button mat-raised-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>toc</mat-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="navbar-accordionContainer">
+      <mat-accordion class="navbar-loginAccordion" id="accordion">
+        <mat-expansion-panel [expanded]="false" hideToggle class="navbar-loginAccordionPanel" #expansionPanel>
+          <mat-panel-description>
+            <div class="navbar-loginAccordionContent">
+              <h2>Welcome to GT Shop</h2>
+              Login or create an account
+            </div>
+
+          </mat-panel-description>
+          <div>
+            <button mat-raised-button
+                    [routerLink]="['/login']">
+              Login
+            </button>
+            <button mat-raised-button
+                    [routerLink]="['/register']">
+              Create
+            </button>
+
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+
+  </div>
+</div>
