@@ -12,29 +12,29 @@
     <PackageJsonScriptsStartWindows Condition="$(PackageJsonScriptsStartWindows) == ''">ng serve --ssl --ssl-cert "%APPDATA%\ASP.NET\https\%npm_package_name%.pem" --ssl-key "%APPDATA%\ASP.NET\https\%npm_package_name%.key" --host=127.0.0.1</PackageJsonScriptsStartWindows>
     <PackageJsonScriptsStartDefault Condition="$(PackageJsonScriptsStartDefault) == ''">ng serve --ssl --ssl-cert "$HOME/.aspnet/https/${npm_package_name}.pem" --ssl-key "$HOME/.aspnet/https/${npm_package_name}.key" --host=127.0.0.1</PackageJsonScriptsStartDefault>
     <PackageJsonPrivate Condition="$(PackageJsonPrivate) == ''">true</PackageJsonPrivate>
-    <PackageJsonDependenciesAngularAnimations Condition="$(PackageJsonDependenciesAngularAnimations) == ''">^19.0.0</PackageJsonDependenciesAngularAnimations>
-    <PackageJsonDependenciesAngularCdk Condition="$(PackageJsonDependenciesAngularCdk) == ''">^19.0.3</PackageJsonDependenciesAngularCdk>
-    <PackageJsonDependenciesAngularCommon Condition="$(PackageJsonDependenciesAngularCommon) == ''">^19.0.0</PackageJsonDependenciesAngularCommon>
-    <PackageJsonDependenciesAngularCompiler Condition="$(PackageJsonDependenciesAngularCompiler) == ''">^19.0.0</PackageJsonDependenciesAngularCompiler>
-    <PackageJsonDependenciesAngularCore Condition="$(PackageJsonDependenciesAngularCore) == ''">^19.0.0</PackageJsonDependenciesAngularCore>
-    <PackageJsonDependenciesAngularForms Condition="$(PackageJsonDependenciesAngularForms) == ''">^19.0.0</PackageJsonDependenciesAngularForms>
-    <PackageJsonDependenciesAngularMaterial Condition="$(PackageJsonDependenciesAngularMaterial) == ''">^19.0.3</PackageJsonDependenciesAngularMaterial>
-    <PackageJsonDependenciesAngularPlatformBrowser Condition="$(PackageJsonDependenciesAngularPlatformBrowser) == ''">^19.0.0</PackageJsonDependenciesAngularPlatformBrowser>
-    <PackageJsonDependenciesAngularPlatformBrowserDynamic Condition="$(PackageJsonDependenciesAngularPlatformBrowserDynamic) == ''">^19.0.0</PackageJsonDependenciesAngularPlatformBrowserDynamic>
-    <PackageJsonDependenciesAngularRouter Condition="$(PackageJsonDependenciesAngularRouter) == ''">^19.0.0</PackageJsonDependenciesAngularRouter>
-    <PackageJsonDependenciesFortawesomeAngularFontawesome Condition="$(PackageJsonDependenciesFortawesomeAngularFontawesome) == ''">^1.0.0</PackageJsonDependenciesFortawesomeAngularFontawesome>
-    <PackageJsonDependenciesFortawesomeFontawesomeSvgCore Condition="$(PackageJsonDependenciesFortawesomeFontawesomeSvgCore) == ''">^6.7.2</PackageJsonDependenciesFortawesomeFontawesomeSvgCore>
-    <PackageJsonDependenciesFortawesomeFreeBrandsSvgIcons Condition="$(PackageJsonDependenciesFortawesomeFreeBrandsSvgIcons) == ''">^6.7.2</PackageJsonDependenciesFortawesomeFreeBrandsSvgIcons>
-    <PackageJsonDependenciesFortawesomeFreeRegularSvgIcons Condition="$(PackageJsonDependenciesFortawesomeFreeRegularSvgIcons) == ''">^6.7.2</PackageJsonDependenciesFortawesomeFreeRegularSvgIcons>
-    <PackageJsonDependenciesFortawesomeFreeSolidSvgIcons Condition="$(PackageJsonDependenciesFortawesomeFreeSolidSvgIcons) == ''">^6.7.2</PackageJsonDependenciesFortawesomeFreeSolidSvgIcons>
+    <PackageJsonDependenciesAngularAnimations Condition="$(PackageJsonDependenciesAngularAnimations) == ''">&gt;=19.0.0</PackageJsonDependenciesAngularAnimations>
+    <PackageJsonDependenciesAngularCdk Condition="$(PackageJsonDependenciesAngularCdk) == ''">&gt;=19.0.3</PackageJsonDependenciesAngularCdk>
+    <PackageJsonDependenciesAngularCommon Condition="$(PackageJsonDependenciesAngularCommon) == ''">&gt;=19.0.0</PackageJsonDependenciesAngularCommon>
+    <PackageJsonDependenciesAngularCompiler Condition="$(PackageJsonDependenciesAngularCompiler) == ''">&gt;=19.0.0</PackageJsonDependenciesAngularCompiler>
+    <PackageJsonDependenciesAngularCore Condition="$(PackageJsonDependenciesAngularCore) == ''">&gt;=19.0.0</PackageJsonDependenciesAngularCore>
+    <PackageJsonDependenciesAngularForms Condition="$(PackageJsonDependenciesAngularForms) == ''">&gt;=19.0.0</PackageJsonDependenciesAngularForms>
+    <PackageJsonDependenciesAngularMaterial Condition="$(PackageJsonDependenciesAngularMaterial) == ''">&gt;=19.0.3</PackageJsonDependenciesAngularMaterial>
+    <PackageJsonDependenciesAngularPlatformBrowser Condition="$(PackageJsonDependenciesAngularPlatformBrowser) == ''">&gt;=19.0.0</PackageJsonDependenciesAngularPlatformBrowser>
+    <PackageJsonDependenciesAngularPlatformBrowserDynamic Condition="$(PackageJsonDependenciesAngularPlatformBrowserDynamic) == ''">&gt;=19.0.0</PackageJsonDependenciesAngularPlatformBrowserDynamic>
+    <PackageJsonDependenciesAngularRouter Condition="$(PackageJsonDependenciesAngularRouter) == ''">&gt;=19.0.0</PackageJsonDependenciesAngularRouter>
+    <PackageJsonDependenciesFortawesomeAngularFontawesome Condition="$(PackageJsonDependenciesFortawesomeAngularFontawesome) == ''">&gt;=1.0.0</PackageJsonDependenciesFortawesomeAngularFontawesome>
+    <PackageJsonDependenciesFortawesomeFontawesomeSvgCore Condition="$(PackageJsonDependenciesFortawesomeFontawesomeSvgCore) == ''">&gt;=6.7.2</PackageJsonDependenciesFortawesomeFontawesomeSvgCore>
+    <PackageJsonDependenciesFortawesomeFreeBrandsSvgIcons Condition="$(PackageJsonDependenciesFortawesomeFreeBrandsSvgIcons) == ''">&gt;=6.7.2</PackageJsonDependenciesFortawesomeFreeBrandsSvgIcons>
+    <PackageJsonDependenciesFortawesomeFreeRegularSvgIcons Condition="$(PackageJsonDependenciesFortawesomeFreeRegularSvgIcons) == ''">&gt;=6.7.2</PackageJsonDependenciesFortawesomeFreeRegularSvgIcons>
+    <PackageJsonDependenciesFortawesomeFreeSolidSvgIcons Condition="$(PackageJsonDependenciesFortawesomeFreeSolidSvgIcons) == ''">&gt;=6.7.2</PackageJsonDependenciesFortawesomeFreeSolidSvgIcons>
     <PackageJsonDependenciesJestEditorSupport Condition="$(PackageJsonDependenciesJestEditorSupport) == ''">*</PackageJsonDependenciesJestEditorSupport>
     <PackageJsonDependenciesRunScriptOs Condition="$(PackageJsonDependenciesRunScriptOs) == ''">*</PackageJsonDependenciesRunScriptOs>
     <PackageJsonDependenciesRxjs Condition="$(PackageJsonDependenciesRxjs) == ''">~7.8.0</PackageJsonDependenciesRxjs>
-    <PackageJsonDependenciesTslib Condition="$(PackageJsonDependenciesTslib) == ''">^2.3.0</PackageJsonDependenciesTslib>
+    <PackageJsonDependenciesTslib Condition="$(PackageJsonDependenciesTslib) == ''">&gt;=2.3.0</PackageJsonDependenciesTslib>
     <PackageJsonDependenciesZoneJs Condition="$(PackageJsonDependenciesZoneJs) == ''">~0.15.0</PackageJsonDependenciesZoneJs>
-    <PackageJsonDevdependenciesAngularDevkitBuildAngular Condition="$(PackageJsonDevdependenciesAngularDevkitBuildAngular) == ''">^19.0.5</PackageJsonDevdependenciesAngularDevkitBuildAngular>
-    <PackageJsonDevdependenciesAngularCli Condition="$(PackageJsonDevdependenciesAngularCli) == ''">^19.0.5</PackageJsonDevdependenciesAngularCli>
-    <PackageJsonDevdependenciesAngularCompilerCli Condition="$(PackageJsonDevdependenciesAngularCompilerCli) == ''">^19.0.0</PackageJsonDevdependenciesAngularCompilerCli>
+    <PackageJsonDevdependenciesAngularDevkitBuildAngular Condition="$(PackageJsonDevdependenciesAngularDevkitBuildAngular) == ''">&gt;=19.0.5</PackageJsonDevdependenciesAngularDevkitBuildAngular>
+    <PackageJsonDevdependenciesAngularCli Condition="$(PackageJsonDevdependenciesAngularCli) == ''">&gt;=19.0.5</PackageJsonDevdependenciesAngularCli>
+    <PackageJsonDevdependenciesAngularCompilerCli Condition="$(PackageJsonDevdependenciesAngularCompilerCli) == ''">&gt;=19.0.0</PackageJsonDevdependenciesAngularCompilerCli>
     <PackageJsonDevdependenciesTypesJasmine Condition="$(PackageJsonDevdependenciesTypesJasmine) == ''">~5.1.0</PackageJsonDevdependenciesTypesJasmine>
     <PackageJsonDevdependenciesJasmineCore Condition="$(PackageJsonDevdependenciesJasmineCore) == ''">~5.4.0</PackageJsonDevdependenciesJasmineCore>
     <PackageJsonDevdependenciesKarma Condition="$(PackageJsonDevdependenciesKarma) == ''">~6.4.0</PackageJsonDevdependenciesKarma>
@@ -42,7 +42,7 @@
     <PackageJsonDevdependenciesKarmaCoverage Condition="$(PackageJsonDevdependenciesKarmaCoverage) == ''">~2.2.0</PackageJsonDevdependenciesKarmaCoverage>
     <PackageJsonDevdependenciesKarmaJasmine Condition="$(PackageJsonDevdependenciesKarmaJasmine) == ''">~5.1.0</PackageJsonDevdependenciesKarmaJasmine>
     <PackageJsonDevdependenciesKarmaJasmineHtmlReporter Condition="$(PackageJsonDevdependenciesKarmaJasmineHtmlReporter) == ''">~2.1.0</PackageJsonDevdependenciesKarmaJasmineHtmlReporter>
-    <PackageJsonDevdependenciesSchematicsScssMigrate Condition="$(PackageJsonDevdependenciesSchematicsScssMigrate) == ''">^2.3.17</PackageJsonDevdependenciesSchematicsScssMigrate>
+    <PackageJsonDevdependenciesSchematicsScssMigrate Condition="$(PackageJsonDevdependenciesSchematicsScssMigrate) == ''">&gt;=2.3.17</PackageJsonDevdependenciesSchematicsScssMigrate>
     <PackageJsonDevdependenciesTypescript Condition="$(PackageJsonDevdependenciesTypescript) == ''">~5.6.2</PackageJsonDevdependenciesTypescript>
   </PropertyGroup>
 </Project>

@@ -29,7 +29,7 @@ export class MainPageComponent implements AfterViewInit {
       let image2 = document.getElementById("mainpage-cardImage2") as HTMLImageElement;
       let image3 = document.getElementById("mainpage-cardImage3") as HTMLImageElement;
       if (wd <= 800) {
-        video.src = './assets/img/PortraitOpeningGtShop.mp4';
+        video.src = './assets/img/PortraitOpeningGtShop.mp4'
         image1.src = './assets/img/Canva1Portrait.png';
         image2.src = './assets/img/Canva2Portrait.png';
         image3.src = './assets/img/Canva3Portrait.png';

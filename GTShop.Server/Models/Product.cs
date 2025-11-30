@@ -11,7 +11,7 @@ public class Product
     public string Description_3 { get; set; } = "";
     public int Power { get; set; }
     public int Torque { get; set; }
-    public List<P_Color> Colors { get; set; } = new List<P_Color>();
+    public List<P_Color> Colors { get; set; } = [];
     public string Image_1 { get; set; } = "";
     public string Image_2 { get; set; }  = "";
     public string Image_3 { get; set; }  = "";

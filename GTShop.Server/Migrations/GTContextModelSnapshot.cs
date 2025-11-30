@@ -57,17 +57,17 @@ namespace GTShop.Server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Cart_IdId")
+                    b.Property<int>("Cart_Id")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("Product_IdId")
+                    b.Property<Guid>("Product_Id")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Cart_IdId");
+                    b.HasIndex("Cart_Id");
 
-                    b.HasIndex("Product_IdId");
+                    b.HasIndex("Product_Id");
 
                     b.ToTable("Cart_Items");
                 });
@@ -99,17 +99,17 @@ namespace GTShop.Server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Order_IdId")
+                    b.Property<int>("Order_Id")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("Product_IdId")
+                    b.Property<Guid>("Product_Id")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Order_IdId");
+                    b.HasIndex("Order_Id");
 
-                    b.HasIndex("Product_IdId");
+                    b.HasIndex("Product_Id");
 
                     b.ToTable("Order_Items");
                 });
@@ -466,40 +466,40 @@ namespace GTShop.Server.Migrations
 
             modelBuilder.Entity("GTShop.Server.Models.Cart_Item", b =>
                 {
-                    b.HasOne("GTShop.Server.Models.Cart", "Cart_Id")
+                    b.HasOne("GTShop.Server.Models.Cart", "Cart_")
                         .WithMany("Cart_Items")
-                        .HasForeignKey("Cart_IdId")
+                        .HasForeignKey("Cart_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GTShop.Server.Models.Product", "Product_Id")
+                    b.HasOne("GTShop.Server.Models.Product", "Product_")
                         .WithMany()
-                        .HasForeignKey("Product_IdId")
+                        .HasForeignKey("Product_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Cart_Id");
+                    b.Navigation("Cart_");
 
-                    b.Navigation("Product_Id");
+                    b.Navigation("Product_");
                 });
 
             modelBuilder.Entity("GTShop.Server.Models.Order_Item", b =>
                 {
-                    b.HasOne("GTShop.Server.Models.Order", "Order_Id")
+                    b.HasOne("GTShop.Server.Models.Order", "Order_")
                         .WithMany("Order_Items")
-                        .HasForeignKey("Order_IdId")
+                        .HasForeignKey("Order_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GTShop.Server.Models.Product", "Product_Id")
+                    b.HasOne("GTShop.Server.Models.Product", "Product_")
                         .WithMany()
-                        .HasForeignKey("Product_IdId")
+                        .HasForeignKey("Product_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Order_Id");
+                    b.Navigation("Order_");
 
-                    b.Navigation("Product_Id");
+                    b.Navigation("Product_");
                 });
 
             modelBuilder.Entity("GTShop.Server.Models.P_Color", b =>

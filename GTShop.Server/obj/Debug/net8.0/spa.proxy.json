@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:51918",
 "RedirectUrl": "",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\FenixDev02\\source\\repos\\GTShop\\GTShop.Server\\..\\gtshop.client",
+"WorkingDirectory": "C:\\Users\\marco\\GTShop\\GTShop\\GTShop.Server\\..\\gtshop.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }
