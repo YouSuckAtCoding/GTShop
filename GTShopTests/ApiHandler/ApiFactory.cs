@@ -1,0 +1,64 @@
+﻿using GTShop.Server;
+using GTShop.Server.Data;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.TestHost;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+
+namespace GTShopTests.ApiHandler;
+public class ApiFactory : WebApplicationFactory<IAssemblyMarker>
+{
+    private readonly Action<IServiceCollection> _config;
+    private string ConnectionString;
+
+    public ApiFactory(Action<IServiceCollection> config, string _ConnectionString)
+    {
+        _config = config;
+        ConnectionString = _ConnectionString;
+    }
+
+    public Action<IServiceCollection> Configure { get; }
+
+    protected override void ConfigureWebHost(IWebHostBuilder builder)
+    {
+        builder.UseEnvironment("Development");
+
+        builder.ConfigureTestServices(services =>
+        {
+            services.RemoveAll(typeof(IdentityDbContext));
+            services.RemoveAll(typeof(IEmailSender));
+            services.RemoveAll<DbContextOptions<GTContext>>();
+            services.RemoveAll<DbContextOptions<IdentityDbContext>>();
+            
+
+            services.AddScoped<IEmailSender>(s => null!);
+
+            services.AddDbContext<GTContext>(options =>
+            {
+                options.UseSqlServer(ConnectionString);
+            });
+
+            //services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            //{
+            //    options.SignIn.RequireConfirmedEmail = true;
+            //    options.Password.RequireDigit = true;
+            //    options.Password.RequiredLength = 6;
+            //})
+            //   .AddEntityFrameworkStores<GTContext>()
+            //   .AddDefaultTokenProviders();
+
+            var sp = services.BuildServiceProvider();
+            using var scope = sp.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<GTContext>();
+
+            dbContext.Database.Migrate();
+
+            _config(services);
+
+        });
+    }
+}

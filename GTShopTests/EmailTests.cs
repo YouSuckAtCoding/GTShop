@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xunit;
 namespace GTShopTests;
 
-public class EmalTests
+public class EmailTests
 {
     private static IConfiguration GetConfiguration()
     {
@@ -20,7 +20,7 @@ public class EmalTests
     [Fact]
     public void Should_Send_Email_To_Recipient()
     {
-        var service = new EmailSender(GetConfiguration());
+        var service = new EmailService(GetConfiguration());
         string recipient = "marco.antonio.rg340@gmail.com";
 
         var user = new User
@@ -33,5 +33,15 @@ public class EmalTests
 
         Assert.True(true); 
 
+    }
+
+    [Fact]
+    public void Should_Create_Confirmation_Link()
+    {
+        var userId = Guid.NewGuid().ToString();
+        var token = Convert.ToBase64String(Encoding.UTF8.GetBytes("sample-token"));
+        string confirmationLink = $"https://yourdomain.com/confirm-email?userId={userId}&token={Uri.EscapeDataString(token)}";
+        Assert.Contains(userId, confirmationLink);
+        Assert.Contains(Uri.EscapeDataString(token), confirmationLink);
     }
 }

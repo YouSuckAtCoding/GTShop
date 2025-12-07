@@ -4,11 +4,11 @@ using System.ComponentModel;
 using System.Net;
 using System.Net.Mail;
 
-public class EmailSender : IEmailSender<User>
+public class EmailService : IEmailSender<User>
 {
     private const string SenderEmailAddress = "marcoantoniodoom@gmail.com";
     private IConfiguration _config;
-    public EmailSender(IConfiguration config)
+    public EmailService(IConfiguration config)
     {
         _config = config;
     }

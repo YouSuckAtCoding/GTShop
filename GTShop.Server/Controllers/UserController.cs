@@ -20,7 +20,7 @@ public class UserController : ControllerBase
         _sender = sender;
     }
 
-    [HttpPost(Endpoints.UserEndpoints.Identity.Register)]
+    [HttpPost(UserEndpoints.Identity.Register)]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -37,8 +37,7 @@ public class UserController : ControllerBase
         {
             var emailToken = await _signInManager.UserManager.GenerateEmailConfirmationTokenAsync(mappedUser);
 
-            var confirmationLink = $"{Request.Scheme}://{Request.Host}{UserEndpoints.Identity.ConfirmEmail}" +
-                $"?userId={Uri.EscapeDataString(mappedUser.Id)}&token={Uri.EscapeDataString(emailToken)}";
+            string confirmationLink = GetConfirmationLink(mappedUser, emailToken);
 
             _ = _sender.SendConfirmationLinkAsync(mappedUser,
                                                   email: "",
@@ -47,7 +46,7 @@ public class UserController : ControllerBase
             return StatusCode(201, confirmationLink);
         }
 
-        if(result.Errors.Any())
+        if (result.Errors.Any())
         {
             var errors = result.Errors.Select(e => e.Description).ToList();
             return BadRequest(errors);
@@ -71,6 +70,11 @@ public class UserController : ControllerBase
         else
             return BadRequest("Email confirmation failed.");
         
+    }
+    private string GetConfirmationLink(User mappedUser, string emailToken)
+    {
+        return $"{Request.Scheme}://{Request.Host}{UserEndpoints.Identity.ConfirmEmail}" +
+            $"?userId={Uri.EscapeDataString(mappedUser.Id)}&token={Uri.EscapeDataString(emailToken)}";
     }
 }
 

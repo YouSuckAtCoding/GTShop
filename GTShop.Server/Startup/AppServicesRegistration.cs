@@ -8,7 +8,7 @@ public static class AppServicesRegistration
 {
     public static IServiceCollection AddDIServices(this IServiceCollection services)
     {
-        services.AddSingleton<IEmailSender<User>,EmailSender>();
+        services.AddSingleton<IEmailSender<User>,EmailService>();
 
 
         return services;

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GTShop.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7b634cb80b40dc8feb3cae65f49e78449584ca2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4849964e9ad098ee24fb6484942661e0631c1d00")]
 [assembly: System.Reflection.AssemblyProductAttribute("GTShop.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GTShop.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
