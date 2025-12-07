@@ -1,5 +1,7 @@
 ﻿using GTShop.Server;
 using GTShop.Server.Data;
+using GTShop.Server.Models;
+using GTShop.Server.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -30,7 +32,7 @@ public class ApiFactory : WebApplicationFactory<IAssemblyMarker>
         builder.ConfigureTestServices(services =>
         {
             services.RemoveAll(typeof(IdentityDbContext));
-            services.RemoveAll(typeof(IEmailSender));
+            services.RemoveAll(typeof(IEmailService<User>));
             services.RemoveAll<DbContextOptions<GTContext>>();
             services.RemoveAll<DbContextOptions<IdentityDbContext>>();
             
@@ -41,15 +43,6 @@ public class ApiFactory : WebApplicationFactory<IAssemblyMarker>
             {
                 options.UseSqlServer(ConnectionString);
             });
-
-            //services.AddIdentity<IdentityUser, IdentityRole>(options =>
-            //{
-            //    options.SignIn.RequireConfirmedEmail = true;
-            //    options.Password.RequireDigit = true;
-            //    options.Password.RequiredLength = 6;
-            //})
-            //   .AddEntityFrameworkStores<GTContext>()
-            //   .AddDefaultTokenProviders();
 
             var sp = services.BuildServiceProvider();
             using var scope = sp.CreateScope();

@@ -1,6 +1,7 @@
 ﻿using GTShop.Server.Contracts.User.Requests;
 using GTShop.Server.Endpoints;
 using GTShop.Server.Models;
+using GTShop.Server.Services;
 using GTShopTests.ApiHandler;
 using GTShopTests.Fixtures;
 using GTShopTests.Mocks;
@@ -46,14 +47,14 @@ public class UserControllerTests : IClassFixture<SQLFixture>
     }
 
     private ApiFactory CreateApiWithMockedServiceImplementation<T>()
-        where T : class, IEmailSender<User>
+        where T : class, IEmailService<User>
     {
         var connectionString = _fixture.ConnectionString;
         var api = new ApiFactory(services =>
         {
 
             services.RemoveAll(typeof(IEmailSender<User>));
-            services.TryAddScoped<IEmailSender<User>, T>();
+            services.TryAddScoped<IEmailService<User>, T>();
 
 
         }, connectionString);

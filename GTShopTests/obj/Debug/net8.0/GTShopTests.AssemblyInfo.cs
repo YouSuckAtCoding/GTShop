@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GTShopTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4849964e9ad098ee24fb6484942661e0631c1d00")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a728723bc5c50f11925f1429c923987c608adc5")]
 [assembly: System.Reflection.AssemblyProductAttribute("GTShopTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GTShopTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

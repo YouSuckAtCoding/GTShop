@@ -3,6 +3,7 @@ using GTShop.Server.Contracts.User.Requests;
 using GTShop.Server.Endpoints;
 using GTShop.Server.Mapper;
 using GTShop.Server.Models;
+using GTShop.Server.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,9 +13,9 @@ namespace GTShop.Server.Controllers;
 public class UserController : ControllerBase
 {
     private readonly SignInManager<User> _signInManager;
-    private readonly IEmailSender<User> _sender;
+    private readonly IEmailService<User> _sender;
 
-    public UserController(SignInManager<User> signInManager, IEmailSender<User> sender)
+    public UserController(SignInManager<User> signInManager, IEmailService<User> sender)
     {
         _signInManager = signInManager;
         _sender = sender;
@@ -37,7 +38,7 @@ public class UserController : ControllerBase
         {
             var emailToken = await _signInManager.UserManager.GenerateEmailConfirmationTokenAsync(mappedUser);
 
-            string confirmationLink = GetConfirmationLink(mappedUser, emailToken);
+            string confirmationLink = _sender.GetConfirmationLink(mappedUser, emailToken, Request);
 
             _ = _sender.SendConfirmationLinkAsync(mappedUser,
                                                   email: "",
@@ -55,6 +56,8 @@ public class UserController : ControllerBase
         return StatusCode(500);
     }
 
+
+
     [HttpGet(UserEndpoints.Identity.ConfirmEmail)]
     public async Task<IActionResult> ConfirmEmail(string userId, string token)
     {
@@ -71,11 +74,7 @@ public class UserController : ControllerBase
             return BadRequest("Email confirmation failed.");
         
     }
-    private string GetConfirmationLink(User mappedUser, string emailToken)
-    {
-        return $"{Request.Scheme}://{Request.Host}{UserEndpoints.Identity.ConfirmEmail}" +
-            $"?userId={Uri.EscapeDataString(mappedUser.Id)}&token={Uri.EscapeDataString(emailToken)}";
-    }
+
 }
 
 
